@@ -1,0 +1,430 @@
+/* Base Styles & Initial Loading State */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #1c3faa;
+    margin-top: 0;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-processing {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Delivery Items */
+.delivery-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.delivery-item.ready {
+    background-color: #ffffff;
+    border-left: 4px solid #28a745;
+}
+
+.delivery-item.generating {
+    border-left: 4px solid #ffc107;
+    opacity: 0.8;
+}
+
+.delivery-item.failed {
+    border-left: 4px solid #dc3545;
+    background-color: #fff8f8;
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.item-status {
+    font-size: 13px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background-color: #e9ecef;
+}
+
+.item-status.generating {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.item-status.ready {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.item-status.failed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* License Key */
+.license-key {
+    display: block;
+    background-color: #f4f4f4;
+    padding: 12px 15px;
+    margin: 15px 0;
+    font-family: monospace;
+    font-size: 16px;
+    word-break: break-all;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #1c3faa;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover:not(.disabled) {
+    background-color: #16318f;
+}
+
+.button.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.button.secondary {
+    background-color: #6c757d;
+}
+
+.button.secondary:hover:not(.disabled) {
+    background-color: #5a6268;
+}
+
+/* Copy Button */
+.copy-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #1c3faa;
+    color: white;
+    border: 1px solid #1c3faa;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.copy-button:hover {
+    background-color: #16318f;
+    border-color: #16318f;
+}
+
+.copy-button:active {
+    background-color: #0f2468;
+    transform: translateY(1px);
+}
+
+.copy-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(28, 63, 170, 0.3);
+}
+
+.copy-button.success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.copy-button.success:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #1c3faa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+.loading-spinner-large {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #1c3faa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Progress */
+.progress-container {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #28a745;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.loading-progress {
+    max-width: 300px;
+    margin: 30px auto;
+    height: 4px;
+    background: #e9ecef;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    width: 30%;
+    background: #1c3faa;
+    border-radius: 2px;
+    animation: loading-progress 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+}
+
+/* Status Messages */
+.status-message {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.status-message.info {
+    background-color: #e7f3ff;
+    color: #004085;
+}
+
+.status-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.status-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Support Message */
+.support-message {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 6px;
+}
+
+/* Transaction Info */
+.transaction-id {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.transaction-info {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.info-label {
+    color: #666;
+    margin-right: 8px;
+}
+
+.info-value {
+    color: #1c3faa;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+.info-value.has-value {
+    color: #28a745;
+}
+
+.info-value.no-value {
+    color: #dc3545;
+}
+
+/* Loading Dots Animation */
+.loading-dots:after {
+    content: '.';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60% { content: '...'; }
+    80%, 100% { content: ''; }
+}
+
+/* Initial Loading State */
+.initial-loading {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.initial-loading h2 {
+    color: #1c3faa;
+    margin: 20px 0 10px;
+    font-size: 24px;
+}
+
+.initial-loading .muted {
+    color: #666;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.initial-loading .small {
+    color: #999;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Initial Loading Steps */
+.initial-loading-steps {
+    max-width: 300px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.initial-loading-step {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.initial-loading-step .step-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.initial-loading-step.loading .step-indicator {
+    border-color: #1c3faa;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Utility Classes */
+.muted {
+    font-size: 13px;
+    color: #666;
+}
