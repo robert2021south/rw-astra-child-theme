@@ -42,12 +42,38 @@ function load_order_complete_assets(): void
         true // Load in footer
     );
 
-    // Pass transaction_id to JavaScript
+    // Pass transaction_id, slug and version to JavaScript
     $transaction_id = isset($_GET['transaction_id']) ? sanitize_text_field($_GET['transaction_id']) : '';
+    $plugin_slug = isset($_GET['slug']) ? sanitize_text_field($_GET['slug']) : '';
+    $plugin_version = isset($_GET['version']) ? sanitize_text_field($_GET['version']) : '';
 
+    // Pass PHP variables to JavaScript
     wp_localize_script('order-complete-min-js', 'orderConfig', array(
         'transactionId' => $transaction_id,
+        'pluginSlug' => $plugin_slug,
+        'pluginVersion' => $plugin_version,
         'ajaxUrl' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('order_complete_nonce')
     ));
+}
+
+// Add custom page template
+add_filter('theme_page_templates', 'add_order_complete_template');
+
+function add_order_complete_template($templates) {
+    $templates['page-templates/order-complete.php'] = 'Order Complete';
+    return $templates;
+}
+
+// Load custom template
+add_filter('template_include', 'load_order_complete_template');
+
+function load_order_complete_template($template) {
+    if (is_page() && get_page_template_slug() === 'page-templates/order-complete.php') {
+        $new_template = get_stylesheet_directory() . '/page-templates/order-complete.php';
+        if (file_exists($new_template)) {
+            return $new_template;
+        }
+    }
+    return $template;
 }

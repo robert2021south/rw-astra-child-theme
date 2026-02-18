@@ -8,59 +8,41 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+get_header();
+?>
+    <div class="ast-container">
+        <div id="primary" class="content-area primary">
+            <main id="main" class="site-main">
+                <article class="post-0 page type-page status-draft hentry">
 
-// Get parameters from URL, set default values
-$transactionId = isset($_GET['transactionId']) ? esc_url_raw($_GET['transactionId']) : '';
-$site_url = isset($_GET['site_url']) ? esc_url_raw($_GET['site_url']) : 'https://robertwp.com';
-$plugin_name = isset($_GET['name']) ? sanitize_text_field($_GET['plugin_name']) : 'RW PostViewStats Pro';
-$plugin_slug = isset($_GET['slug']) ? sanitize_text_field($_GET['plugin_slug']) : 'rw-postviewstats-pro';
-$plugin_version = isset($_GET['version']) ? sanitize_text_field($_GET['plugin_version']) : '1.0.0';
+                    <div class="entry-content">
+                        <!-- Initial loading state -->
+                        <div id="initial-loading" class="initial-loading">
+                            <div class="loading-spinner-large"></div>
+                            <h2>Loading your order...</h2>
+                            <p class="muted">Please wait while we prepare your purchase</p>
 
-// Pass PHP variables to JavaScript
-wp_localize_script('order-complete-min-js', 'orderConfig', array(
-    'transactionId' => $transactionId,
-    'siteUrl' => $site_url,
-    'pluginName' => $plugin_name,
-    'pluginSlug' => $plugin_slug,
-    'pluginVersion' => $plugin_version,
-    'ajaxUrl' => admin_url('admin-ajax.php'),
-    'nonce' => wp_create_nonce('order_complete_nonce')
-));
+                            <div class="transaction-info">
+                                <span class="info-label">Transaction ID:</span>
+                                <strong class="info-value" id="transaction-id-display">
+                                    <?php echo esc_html(sanitize_text_field($_GET['slug']) ?: 'Loading...'); ?>
+                                </strong>
+                            </div>
 
-// Do not load header and footer, keep the page clean
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title('|', true, 'right'); ?> Order Complete</title>
+                            <div class="loading-progress">
+                                <div class="loading-progress-bar"></div>
+                            </div>
 
-    <?php wp_head(); ?>
-</head>
-<body>
-<div class="container">
-    <!-- Initial loading state -->
-    <div id="initial-loading" class="initial-loading">
-        <div class="loading-spinner-large"></div>
-        <h2>Loading your order...</h2>
-        <p class="muted">Please wait while we prepare your purchase</p>
+                            <p class="small">This may take a few moments</p>
+                        </div>
 
-        <div class="transaction-info">
-            <span class="info-label">Transaction ID:</span>
-            <strong class="info-value" id="transaction-id-display">
-                <?php echo esc_html($_GET['transaction_id'] ?? 'Loading...'); ?>
-            </strong>
+                        <!-- Main content area, initially hidden -->
+                        <div id="app" style="display: none;"></div>
+                    </div>
+                </article>
+            </main>
         </div>
-
-        <div class="loading-progress">
-            <div class="loading-progress-bar"></div>
-        </div>
-
-        <p class="small">This may take a few moments</p>
     </div>
-
-    <div id="app" style="display: none;"></div>
-</div>
 
 <script>
     (function displayTransactionIdImmediately() {
@@ -95,6 +77,6 @@ wp_localize_script('order-complete-min-js', 'orderConfig', array(
 </script>
 
 
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php
+get_footer();
+?>

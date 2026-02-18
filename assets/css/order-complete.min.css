@@ -8,6 +8,21 @@ body {
     padding: 20px;
 }
 
+.ast-container #primary.content-area {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.entry-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 20px 0;
+}
+
 .container {
     max-width: 600px;
     margin: 30px auto;
@@ -427,4 +442,5 @@ h1 {
 .muted {
     font-size: 13px;
     color: #666;
+    margin-top:10px
 }
