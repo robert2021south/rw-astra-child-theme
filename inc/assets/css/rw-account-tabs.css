@@ -1,0 +1,528 @@
+/* 错误提示样式 */
+.rw-error-notice {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #f44336;
+}
+
+.rw-error-title {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.rw-error-message {
+    margin: 0 0 5px 0;
+}
+
+.rw-error-help {
+    margin: 10px 0 0 0;
+    font-size: 13px;
+}
+
+.rw-support-link {
+    color: #721c24;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rw-support-link:hover {
+    text-decoration: underline;
+}
+
+/* 空状态样式 */
+.rw-empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px dashed #dee2e6;
+}
+
+.rw-empty-icon {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.rw-empty-title {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.rw-empty-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rw-empty-button {
+    background-color: #1c3faa;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.rw-empty-button:hover {
+    background-color: #2a4fbb;
+    color: white;
+    text-decoration: none;
+}
+
+/* 授权卡片样式 */
+.rw-license-card {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rw-license-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.rw-license-header {
+    background: linear-gradient(135deg, #1c3faa 0%, #2a4fbb 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rw-license-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rw-license-status {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.rw-license-status-active {
+    background: #4CAF50;
+}
+
+.rw-license-status-expired {
+    background: #f44336;
+}
+
+.rw-license-status-suspended {
+    background: #ff9800;
+}
+
+/* 授权身体样式 */
+.rw-license-body {
+    padding: 25px;
+    background: white;
+}
+
+.rw-license-key-section {
+    margin-bottom: 20px;
+}
+
+.rw-field-label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.rw-license-key-wrapper {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.rw-license-key-display {
+    flex: 1;
+    padding: 12px 15px;
+    background: transparent;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.rw-copy-btn {
+    background: #1c3faa;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rw-copy-btn:hover {
+    background: #2a4fbb;
+}
+
+.rw-copy-btn:disabled {
+    background: #28a745;
+    cursor: default;
+}
+
+/* 授权详情网格 */
+.rw-license-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.rw-license-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rw-detail-label {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.rw-detail-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.rw-detail-value.rw-expired {
+    color: #dc3545;
+}
+
+.rw-detail-value.rw-active {
+    color: #28a745;
+}
+
+.rw-order-id {
+    font-family: monospace;
+}
+
+/* 授权底部 */
+.rw-license-footer {
+    background: #f8f9fa;
+    padding: 15px 25px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rw-download-btn {
+    background: transparent;
+    color: #1c3faa;
+    border: 1px solid #1c3faa;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.rw-download-btn:hover {
+    background: #1c3faa;
+    color: white;
+    border-color: #1c3faa;
+    text-decoration: none;
+}
+
+/* 订单卡片样式 */
+.rw-order-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.rw-order-header {
+    background: #f5f5f5;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rw-order-label {
+    font-size: 16px;
+}
+
+.rw-order-id {
+    background: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.rw-order-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.rw-order-status-paid {
+    background: #4CAF50;
+}
+
+.rw-order-status-refunded {
+    background: #f44336;
+}
+
+.rw-order-status-pending {
+    background: #ff9800;
+}
+
+/* 订单表格 */
+.rw-order-body {
+    padding: 15px;
+    background: white;
+}
+
+.rw-order-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rw-order-items-table th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.rw-order-items-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.rw-col-product {
+    text-align: left;
+}
+
+.rw-col-quantity {
+    text-align: center;
+}
+
+.rw-col-price {
+    text-align: right;
+}
+
+.rw-order-total {
+    font-weight: bold;
+}
+
+.rw-total-value {
+    text-align: right;
+    color: #1c3faa;
+}
+
+.rw-order-refund {
+    color: #f44336;
+}
+
+.rw-refund-value {
+    text-align: right;
+}
+
+/* 订单底部 */
+.rw-order-footer {
+    background: #fafafa;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rw-order-meta {
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.rw-view-license-btn {
+    background: #1c3faa;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.2s;
+}
+
+.rw-view-license-btn:hover {
+    background: #2a4fbb;
+    color: white;
+    text-decoration: none;
+}
+
+/* 分页样式 */
+.rw-pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.rw-page-link {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    background: #f8f9fa;
+    color: #1c3faa;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    transition: all 0.2s;
+}
+
+.rw-page-link:hover {
+    background: #e9ecef;
+    border-color: #1c3faa;
+    text-decoration: none;
+}
+
+.rw-page-link.rw-current-page {
+    background: #1c3faa;
+    color: white;
+    border-color: #1c3faa;
+}
+
+/* 通知样式 */
+.rw-notice {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    animation: rw-slide-in 0.3s ease;
+}
+
+.rw-notice-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.rw-notice-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.rw-notice-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+@keyframes rw-slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .rw-license-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rw-license-footer {
+        justify-content: center;
+    }
+
+    .rw-license-body {
+        padding: 15px;
+    }
+
+    .rw-license-key-wrapper {
+        flex-direction: column;
+    }
+
+    .rw-copy-btn {
+        width: 100%;
+        padding: 10px !important;
+    }
+
+    .rw-order-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rw-order-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rw-order-meta {
+        justify-content: center;
+    }
+
+    .rw-order-items-table {
+        font-size: 14px;
+    }
+
+    .rw-order-items-table th,
+    .rw-order-items-table td {
+        padding: 8px 5px;
+    }
+}

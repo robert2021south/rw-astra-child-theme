@@ -77,3 +77,14 @@ function load_order_complete_template($template) {
     }
     return $template;
 }
+
+/**
+ * Astra Child Theme Functions
+ */
+
+// 定义主题常量
+define('ASTRA_CHILD_PATH', get_stylesheet_directory());
+define('ASTRA_CHILD_URL', get_stylesheet_directory_uri());
+
+// 加载模块加载器
+require_once ASTRA_CHILD_PATH . '/inc/loader.php';
