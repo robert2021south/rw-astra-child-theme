@@ -1,0 +1,349 @@
+.uwp-page {
+    margin: 20px 0;
+}
+
+.uwp-profile-sidebar {
+    margin-bottom: 20px;
+}
+
+/* left  menu styles */
+.uwp-profile-sidebar .uwp-account-menu {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.uwp-profile-sidebar .uwp-account-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.uwp-profile-sidebar .uwp-account-menu li a {
+    display: block;
+    padding: 12px 24px;
+    color: #374151;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.uwp-profile-sidebar .uwp-account-menu li a:hover {
+    background: #f9fafb;
+    border-left-color: #1c3faa;
+    color: #1c3faa;
+}
+
+.uwp-profile-sidebar .uwp-account-menu li.active a {
+    background: #f3f4f6;
+    border-left-color: #1c3faa;
+    color: #1c3faa;
+    font-weight: 500;
+}
+
+/* right content block */
+.uwp-profile-content {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.uwp-profile-entries {
+    min-height: 400px;
+}
+
+/* order detail card */
+.rw-order-detail-card {
+    max-width: 100%;
+}
+
+/* back button */
+.rw-detail-header .btn-outline-secondary {
+    color: #6b7280;
+    border-color: #e5e7eb;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.rw-detail-header .btn-outline-secondary:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+/* status badge */
+.rw-detail-header .badge {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 30px;
+}
+
+.badge-success {
+    background: #10b981;
+    color: white;
+}
+
+.badge-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.badge-warning {
+    background: #f59e0b;
+    color: white;
+}
+
+.badge-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+/* card style */
+.rw-order-detail-card .card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.rw-order-detail-card .card-header {
+    background: #f9fafb;
+    border-bottom: 1px solid #e9ecef;
+    padding: 16px 20px;
+    border-radius: 12px 12px 0 0;
+}
+
+.rw-order-detail-card .card-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.rw-order-detail-card .card-body {
+    padding: 20px;
+}
+
+/* goods list styles */
+.rw-order-detail-card .table {
+    margin-bottom: 0;
+}
+
+.rw-order-detail-card .table th {
+    background: #f9fafb;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.rw-order-detail-card .table td {
+    padding: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.rw-order-detail-card .table tr:last-child td {
+    border-bottom: none;
+}
+
+/* total */
+.rw-order-detail-card .table-sm {
+    width: 100%;
+}
+
+.rw-order-detail-card .table-sm th {
+    background: transparent;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b7280;
+    border: none;
+}
+
+.rw-order-detail-card .table-sm td {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #1f2937;
+    border: none;
+    text-align: right;
+}
+
+.rw-order-detail-card .table-sm .fw-bold th,
+.rw-order-detail-card .table-sm .fw-bold td {
+    font-weight: 600;
+    color: #1f2937;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+}
+
+/* payment display */
+.payment-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    border-radius: 50%;
+}
+
+/* invoce download */
+.rw-order-detail-card .btn-primary {
+    background: #1c3faa;
+    border: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.rw-order-detail-card .btn-primary:hover {
+    background: #2a4fbb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(28,63,170,0.2);
+}
+
+/* refund card */
+.rw-order-detail-card .border-danger {
+    border-color: #fee2e2 !important;
+}
+
+.rw-order-detail-card .bg-danger {
+    background: #dc2626 !important;
+}
+
+/* loading status */
+.rw-order-detail-tab .text-center {
+    padding: 60px 20px;
+}
+
+.rw-order-detail-tab .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+.rw-order-detail-sections {
+    max-width: 100%;
+}
+/* Payment Summary 表格样式 */
+.rw-payment-summary-table {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;  /* 在大屏幕上靠右对齐 */
+    margin-right: 0;
+}
+
+.rw-payment-summary-table th {
+    width: 40%;
+    text-align: left;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b7280;
+    border: none;
+    background: transparent;
+}
+
+.rw-payment-summary-table td {
+    width: 60%;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #1f2937;
+    border: none;
+    text-align: right;
+}
+
+.rw-payment-summary-table .fw-bold th,
+.rw-payment-summary-table .fw-bold td {
+    font-weight: 600;
+    color: #1f2937;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+}
+
+.rw-detail-header .badge {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 768px) {
+    .rw-payment-summary-table {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .rw-payment-summary-table th,
+    .rw-payment-summary-table td {
+        padding: 6px 0;
+    }
+}
+
+/* 中等屏幕下适当调整 */
+@media (min-width: 769px) and (max-width: 991px) {
+    .rw-payment-summary-table {
+        max-width: 350px;
+    }
+}
+@media (min-width: 992px) {
+    .rw-order-detail-card .table-sm {
+        width: 50%;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .rw-order-detail-card .table-sm {
+        width: 100%;
+    }
+}
+/*  */
+@media (max-width: 768px) {
+    .uwp-profile-sidebar {
+        margin-bottom: 20px;
+    }
+
+    .uwp-profile-content {
+        padding: 16px;
+    }
+
+    .rw-order-detail-card .card-body {
+        padding: 16px;
+    }
+
+    .rw-order-detail-card .table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rw-detail-header .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .rw-detail-header .badge {
+        align-self: flex-start;
+    }
+
+    .payment-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}

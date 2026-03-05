@@ -1,0 +1,405 @@
+/* 订单网格布局 - 已存在，不需要改 */
+.rw-orders-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 订单卡片 - 增加下边距确保间距 */
+.rw-order-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 0;
+}
+
+.rw-order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* 订单头部 - 修改 flex-wrap 和 gap */
+.rw-order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f3f4f6;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 12px; /* 添加 gap 控制间距 */
+}
+
+/* 订单信息容器 - 增加 flex-wrap */
+.rw-order-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap; /* 允许换行 */
+}
+
+/* 订单号 - 新增样式 */
+.rw-order-number {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    font-family: 'SF Mono', Monaco, monospace;
+    background: #f3f4f6;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+/* 订单日期 */
+.rw-order-date {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* 订单状态样式 */
+.rw-status-paid {
+    background: #ecfdf5;
+    color: #059669;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.rw-status-refunded {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.rw-status-pending {
+    background: #fffbeb;
+    color: #d97706;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.rw-status-cancelled {
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.rw-status-unknown {
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* 商品摘要 */
+.rw-order-item-summary {
+    font-size: 15px;
+    color: #1f2937;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* 支付方式和发票徽章行 - 新增 */
+.rw-order-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* 支付方式徽章 */
+.rw-payment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #374151;
+}
+
+.rw-payment-icon {
+    font-size: 12px;
+}
+
+/* 发票徽章 */
+.rw-invoice-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #1d4ed8;
+}
+
+.rw-invoice-icon {
+    font-size: 12px;
+}
+
+/* 原有样式保持不变 */
+.rw-order-amount {
+    text-align: right;
+    margin-left: 20px;
+}
+
+.rw-amount-currency {
+    font-size: 13px;
+    color: #6b7280;
+    margin-right: 4px;
+}
+
+.rw-amount-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* 操作按钮 - 已存在 */
+.rw-order-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+}
+
+/* 订单列表容器 - 已经在你的样式中有 .rw-orders-list，但需要确认 */
+.rw-orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 订单主体布局 */
+.rw-order-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+/* 订单详情区域 */
+.rw-order-details {
+    flex: 1;
+}
+
+/* 商品摘要容器 */
+.rw-order-items {
+    margin-bottom: 8px;
+}
+
+/* 商品摘要文本 */
+.rw-items-summary {
+    font-size: 15px;
+    color: #1f2937;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* 支付文本 */
+.rw-payment-text {
+    font-size: 12px;
+    color: #374151;
+}
+
+/* 发票文本 */
+.rw-invoice-text {
+    font-size: 12px;
+    color: #1d4ed8;
+}
+
+/* 退款徽章 - 已在你的样式中有 .rw-refund-badge，但补充完整 */
+.rw-refund-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #fef2f2;
+    color: #dc2626;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #fee2e2;
+}
+
+/* 查看详情按钮 */
+.rw-btn-view {
+    padding: 8px 20px;
+    background: #1c3faa;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rw-btn-view:hover {
+    background: #2a4fbb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 订单状态通用样式（如果 .rw-order-status 未定义） */
+.rw-order-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* 确保支付方式徽章中的图标和文本对齐 */
+.rw-payment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #374151;
+    cursor: help;
+}
+
+/* 确保发票徽章中的图标和文本对齐 */
+.rw-invoice-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #1d4ed8;
+}
+
+/* 金额区域 */
+.rw-order-amount {
+    text-align: right;
+    min-width: 100px;
+    padding: 8px 12px;
+    background: #f9fafb;
+    border-radius: 30px;
+    border: 1px solid #e9ecef;
+}
+
+/* 货币符号 */
+.rw-amount-currency {
+    font-size: 13px;
+    color: #6b7280;
+    margin-right: 4px;
+}
+
+/* 金额数值 */
+.rw-amount-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* 订单底部 */
+.rw-order-footer {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+}
+
+/* 操作按钮容器 */
+.rw-order-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+}
+
+
+
+/* 响应式 - 已存在 */
+@media (max-width: 640px) {
+    .rw-order-body {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .rw-order-amount {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .rw-order-actions {
+        flex-wrap: wrap;
+    }
+
+    .rw-btn-view,
+    .rw-btn-invoice {
+        flex: 1;
+        text-align: center;
+    }
+}
+@media (max-width: 640px) {
+    .rw-order-body {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .rw-order-amount {
+        text-align: left;
+        align-self: flex-start;
+        width: auto;
+    }
+
+    .rw-order-actions {
+        flex-wrap: wrap;
+    }
+
+    .rw-btn-view {
+        flex: 1;
+        text-align: center;
+    }
+}

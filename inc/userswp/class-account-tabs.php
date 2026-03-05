@@ -11,20 +11,26 @@ class RW_Account_Tabs
     {
         add_filter('uwp_account_available_tabs', [$this, 'add_custom_tabs']);
         add_filter('uwp_account_available_tabs', [$this, 'reorder_tabs'], 20);
+        add_filter('uwp_account_navigation_tabs', [$this, 'hide_navigation_tabs']);
         add_action('uwp_account_form_display', [$this, 'render_tab_content']);
         //add_filter('uwp_account_hooks', [$this, 'add_my_licenses_tab']);
         add_filter('uwp_account_page_title', [$this, 'override_account_title'], 10, 2);
     }
 
     function override_account_title($title, $type) {
-        // 当type参数为my_licenses时，修改标题
+
         if ($type == 'my_licenses') {
             return __('My Licenses', 'astra-child');
         }
-        // 也可以处理其他自定义标签页
+
         if ($type == 'my_orders') {
             return __('My Orders', 'astra-child');
         }
+
+        if ($type == 'order_detail') {
+            return __('Order Detail', 'astra-child');
+        }
+
         return $title;
     }
 
@@ -38,8 +44,22 @@ class RW_Account_Tabs
             'title' => __('My Orders', 'astra-child'),
             'icon' => 'fas fa-shopping-cart',
         ];
+        $tabs['order_detail'] = [
+            'title' => __('Order Detail', 'astra-child'),
+            'icon' => 'fas fa-receipt',
+        ];
         return $tabs;
     }
+
+    /**
+     * 隐藏导航中的 tab
+     */
+    public function hide_navigation_tabs($tabs)
+    {
+        unset($tabs['order_detail']);
+        return $tabs;
+    }
+
 
     public function reorder_tabs($tabs): array
     {
@@ -59,26 +79,19 @@ class RW_Account_Tabs
 
         // 只处理自定义标签页
         if ($active_tab === 'my_licenses') {
-            $this->render_licenses_tab();
+            include ASTRA_CHILD_PATH . '/inc/userswp/templates/licenses.php';
             return;
         }
 
         if ($active_tab === 'my_orders') {
-            $this->render_orders_tab();
+            include ASTRA_CHILD_PATH . '/inc/userswp/templates/orders.php';
+        }
+
+        if ($active_tab === 'order_detail') {
+            include ASTRA_CHILD_PATH . '/inc/userswp/templates/order-detail.php';
             return;
         }
 
-
     }
 
-    /* =============== 私有方法 ==================== */
-    private function render_licenses_tab(): void
-    {
-        include ASTRA_CHILD_PATH . '/inc/userswp/templates/licenses-tab.php';
-    }
-
-    private function render_orders_tab(): void
-    {
-        include ASTRA_CHILD_PATH . '/inc/userswp/templates/orders-tab.php';
-    }
 }
